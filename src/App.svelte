@@ -443,6 +443,7 @@
     gap: 20px;
   }
 
+  h1,
   h2,
   p {
     margin: 0;
