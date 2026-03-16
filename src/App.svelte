@@ -146,8 +146,7 @@
 <main class="layout">
   <section class="hero">
     <div>
-      <p class="eyebrow">Kreditübersicht</p>
-      <h1>Finanzierungen in einer kompakten Ansicht.</h1>
+      <h1>Kreditübersicht</h1>
     </div>
     <div class="summary-grid">
       <article>
@@ -444,7 +443,6 @@
     gap: 20px;
   }
 
-  .hero h1,
   h2,
   p {
     margin: 0;
