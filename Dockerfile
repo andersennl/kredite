@@ -34,6 +34,8 @@ ENV NODE_ENV=production
 ENV PORT=3000
 ENV DATA_DIR=/data
 
+LABEL org.opencontainers.image.source="https://github.com/andersennl/finanzen"
+
 VOLUME ["/data"]
 
 EXPOSE 3000

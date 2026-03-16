@@ -1,29 +1,29 @@
 # Kredite
 
-Minimale Kredit-Uebersicht mit Svelte, Chart.js, SQLite und Docker.
+Minimal loan overview built with Svelte, Chart.js, SQLite, and Docker.
 
-## Start
+## Running the app
 
 ```bash
 docker compose up --build
 ```
 
-Danach ist die App unter `http://localhost:3000` erreichbar.
+The app is then available at `http://localhost:3000`.
 
-Die SQLite-Datei liegt im Container unter `/data/kredite.sqlite` und kann auf einen beliebigen Host-Pfad gemountet werden:
+The SQLite database is stored inside the container at `/data/kredite.sqlite` and can be mounted to any host path:
 
 ```bash
-KREDITE_DATA_DIR=/pfad/zum/volume docker compose up --build
+KREDITE_DATA_DIR=/path/to/volume docker compose up --build
 ```
 
-Oder direkt mit `docker run`:
+Or run it directly with `docker run`:
 
 ```bash
 docker build -t kredite .
-docker run -p 3000:3000 -v /pfad/zum/volume:/data kredite
+docker run -p 3000:3000 -v /path/to/volume:/data kredite
 ```
 
-## Entwicklung
+## Development
 
 ```bash
 npm install
