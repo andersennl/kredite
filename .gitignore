@@ -1,0 +1,7 @@
+.tools/
+node_modules/
+dist/
+data/
+.DS_Store
+npm-debug.log*
+node-v22.14.0-linux-x64.tar.xz

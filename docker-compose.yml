@@ -1,0 +1,10 @@
+services:
+  kredite:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ${KREDITE_DATA_DIR:-./data}:/data
+    environment:
+      PORT: 3000
+      DATA_DIR: /data
