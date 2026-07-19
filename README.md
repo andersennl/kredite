@@ -34,31 +34,21 @@ Banking apps show one loan at a time, and spreadsheets rot. Kredite computes ful
 
 ## Installation
 
-### Option 1: Prebuilt image (recommended)
-
-A container image is published to GitHub Container Registry on every push to `main`:
+### Option 1: Docker Compose (recommended)
 
 ```bash
-docker run -p 3000:3000 -v /path/to/data:/data ghcr.io/andersennl/finanzen:latest
-```
-
-The app is then available at `http://localhost:3000`. The SQLite database lives at `/data/kredite.sqlite` inside the container — mount `/data` to keep it.
-
-### Option 2: Docker Compose from source
-
-```bash
-git clone https://github.com/andersennl/finanzen.git
-cd finanzen
+git clone https://github.com/andersennl/kredite.git
+cd kredite
 docker compose up --build
 ```
 
-By default the database is stored in `./data`; set `KREDITE_DATA_DIR` to use another host path:
+The app is then available at `http://localhost:3000`. The SQLite database lives at `/data/kredite.sqlite` inside the container; by default it is stored in `./data` on the host. Set `KREDITE_DATA_DIR` to use another host path:
 
 ```bash
 KREDITE_DATA_DIR=/path/to/volume docker compose up --build
 ```
 
-### Option 3: Local development
+### Option 2: Local development
 
 Requires **Node.js 22** (the version the Docker image uses; `better-sqlite3` 11.x does not build on newer Node majors).
 
@@ -86,7 +76,7 @@ The financial core (amortization, portfolio totals, payoff priority, formatting)
 npm test
 ```
 
-Tests run in CI on every push and pull request. If you touch the calculation logic, add a test case — that file is the part of the project where silent mistakes cost real money.
+If you touch the calculation logic, add a test case — that file is the part of the project where silent mistakes cost real money.
 
 ## API
 
@@ -110,6 +100,7 @@ Rough order; none of this is promised. Open an issue if one of these matters to 
 - [ ] **Fixed-interest periods (Zinsbindung)** — model a rate change after N years instead of assuming one rate for the whole term.
 - [ ] **CSV/JSON export** of loans and schedules.
 - [ ] **Optional authentication** for exposing the app beyond localhost.
+- [ ] **Prebuilt container image** on a registry (GitHub Actions is currently disabled for this repo; the included workflows are inactive).
 - [ ] **Upgrade `better-sqlite3`** to a version that builds on current Node majors.
 
 ## Contributing
