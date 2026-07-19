@@ -100,7 +100,7 @@ Rough order; none of this is promised. Open an issue if one of these matters to 
 - [ ] **Fixed-interest periods (Zinsbindung)** — model a rate change after N years instead of assuming one rate for the whole term.
 - [ ] **CSV/JSON export** of loans and schedules.
 - [ ] **Optional authentication** for exposing the app beyond localhost.
-- [ ] **Prebuilt container image** on a registry (GitHub Actions is currently disabled for this repo; the included workflows are inactive).
+- [ ] **Prebuilt container image** on a registry.
 - [ ] **Upgrade `better-sqlite3`** to a version that builds on current Node majors.
 
 ## Contributing
